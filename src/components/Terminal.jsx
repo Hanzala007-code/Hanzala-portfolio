@@ -31,7 +31,7 @@ export default function Terminal() {
         newHistory.push({
           type: "output",
           text: `AVAILABLE COMMANDS:
-• projects    - List all 8 production ML & Agentic systems
+• projects    - List all production ML, Vision & Automation systems
 • skills      - Display technical proficiency matrix
 • about       - Overview of Hanzala Malik's engineering focus
 • experience  - Summary of industry roles (Cnergyico, Escaplix, etc.)
@@ -77,10 +77,10 @@ ${personalInfo.bio}`
         newHistory.push({
           type: "output",
           text: `PROFESSIONAL TIMELINE:
-1. Cnergyico (Aug 2026 - Sept 2026) - AI Automation Intern (Speech Diarization & 300+ Vendor Invoice OCR)
+1. Cnergyico (Aug 2026 - Sept 2026) - AI Automation Engineer (Speech Diarization & ~300 Vendor Invoice OCR Engine)
 2. Escaplix (Nov 2025 - Jun 2026) - AI Automation Engineer (n8n, OpenAI APIs, FastAPI Services)
 3. CloudOps (Oct 2024 - Sept 2025) - AI-Based Outreach Automation (Scale Personalization)
-4. NADRA Pakistan (Jul 2024 - Aug 2024) - Data Science Intern (Gov FAQ Chatbot Architecture)`
+4. NADRA Pakistan (Jul 2024 - Aug 2024) - Data Science Associate (Gov FAQ Chatbot Architecture)`
         });
         break;
 

@@ -1,12 +1,20 @@
 import React, { useState } from "react";
 import { projects } from "../data/portfolioData";
 import ProjectCard from "./ProjectCard";
-import { Layers, Sparkles } from "lucide-react";
+import { Layers } from "lucide-react";
 
 export default function ProjectsSection() {
   const [activeCategory, setActiveCategory] = useState("All");
 
-  const categories = ["All", "Computer Vision", "Agentic AI", "Speech & NLP", "Data Engineering", "Reinforcement & ML"];
+  const categories = [
+    "All",
+    "Computer Vision",
+    "Agentic AI",
+    "Speech & NLP",
+    "AI Automation",
+    "Data Engineering",
+    "Reinforcement & ML"
+  ];
 
   const filteredProjects = activeCategory === "All"
     ? projects

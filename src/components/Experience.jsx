@@ -1,6 +1,6 @@
 import React from "react";
 import { experiences } from "../data/portfolioData";
-import { Briefcase, Calendar, MapPin, CheckCircle2 } from "lucide-react";
+import { Briefcase, Calendar, MapPin, CheckCircle2, Layers, ArrowRight } from "lucide-react";
 
 export default function Experience() {
   return (
@@ -102,17 +102,125 @@ export default function Experience() {
                     "{exp.summary}"
                   </p>
 
-                  {/* Highlights Bullet points */}
-                  <div style={{ display: "flex", flexDirection: "column", gap: "10px", marginBottom: "22px" }}>
-                    {exp.highlights.map((h, hIdx) => (
-                      <div key={hIdx} style={{ display: "flex", alignItems: "flex-start", gap: "10px", fontSize: "0.9rem", color: "#cbd5e1" }}>
-                        <CheckCircle2 size={16} color="var(--accent-emerald)" style={{ flexShrink: 0, marginTop: "3px" }} />
-                        <span>{h}</span>
+                  {/* If the experience contains full projects, render them with architecture breakdowns */}
+                  {exp.projects && exp.projects.length > 0 ? (
+                    <div style={{ display: "flex", flexDirection: "column", gap: "20px", marginTop: "18px", marginBottom: "22px" }}>
+                      <div
+                        style={{
+                          fontFamily: "var(--font-mono)",
+                          fontSize: "0.75rem",
+                          textTransform: "uppercase",
+                          letterSpacing: "0.08em",
+                          color: "var(--accent-cyan)",
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "6px"
+                        }}
+                      >
+                        <Layers size={14} />
+                        <span>Engineered Production Projects & Pipelines</span>
                       </div>
-                    ))}
-                  </div>
 
-                  {/* Tech stack */}
+                      {exp.projects.map((proj, pIdx) => (
+                        <div
+                          key={pIdx}
+                          style={{
+                            background: "rgba(255, 255, 255, 0.025)",
+                            border: "1px solid rgba(0, 240, 255, 0.18)",
+                            borderRadius: "12px",
+                            padding: "20px",
+                            display: "flex",
+                            flexDirection: "column",
+                            gap: "12px",
+                            position: "relative"
+                          }}
+                        >
+                          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: "8px" }}>
+                            <h4
+                              style={{
+                                fontFamily: "var(--font-display)",
+                                fontSize: "1.1rem",
+                                fontWeight: 700,
+                                color: "#ffffff"
+                              }}
+                            >
+                              {proj.title}
+                            </h4>
+                            <span
+                              className="badge badge-cyan"
+                              style={{ fontSize: "0.72rem" }}
+                            >
+                              {proj.badge}
+                            </span>
+                          </div>
+
+                          <p style={{ fontSize: "0.88rem", color: "var(--text-secondary)", lineHeight: 1.6 }}>
+                            {proj.description}
+                          </p>
+
+                          {proj.architecture && (
+                            <div style={{ display: "flex", flexDirection: "column", gap: "8px", marginTop: "4px" }}>
+                              <div
+                                style={{
+                                  fontFamily: "var(--font-mono)",
+                                  fontSize: "0.7rem",
+                                  color: "var(--text-muted)",
+                                  letterSpacing: "0.04em",
+                                  fontWeight: 600
+                                }}
+                              >
+                                PIPELINE ARCHITECTURE & WORKFLOW:
+                              </div>
+                              {proj.architecture.map((step, sIdx) => (
+                                <div
+                                  key={sIdx}
+                                  style={{
+                                    display: "flex",
+                                    alignItems: "flex-start",
+                                    gap: "8px",
+                                    fontSize: "0.84rem",
+                                    color: "#cbd5e1",
+                                    lineHeight: 1.5
+                                  }}
+                                >
+                                  <ArrowRight size={13} color="var(--accent-cyan)" style={{ flexShrink: 0, marginTop: "4px" }} />
+                                  <span>{step}</span>
+                                </div>
+                              ))}
+                            </div>
+                          )}
+
+                          <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", marginTop: "6px" }}>
+                            {proj.tech.map((t, tIdx) => (
+                              <span
+                                key={tIdx}
+                                className="badge"
+                                style={{
+                                  fontSize: "0.7rem",
+                                  background: "rgba(255, 255, 255, 0.04)",
+                                  borderColor: "rgba(255, 255, 255, 0.08)"
+                                }}
+                              >
+                                {t}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    /* Standard Highlights Bullet points */
+                    <div style={{ display: "flex", flexDirection: "column", gap: "10px", marginBottom: "22px" }}>
+                      {exp.highlights.map((h, hIdx) => (
+                        <div key={hIdx} style={{ display: "flex", alignItems: "flex-start", gap: "10px", fontSize: "0.9rem", color: "#cbd5e1" }}>
+                          <CheckCircle2 size={16} color="var(--accent-emerald)" style={{ flexShrink: 0, marginTop: "3px" }} />
+                          <span>{h}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Summary Tech stack */}
                   <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
                     {exp.tech.map((t, tIdx) => (
                       <span key={tIdx} className="badge badge-cyan" style={{ fontSize: "0.72rem" }}>

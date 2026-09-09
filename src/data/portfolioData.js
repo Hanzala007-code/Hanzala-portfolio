@@ -60,6 +60,30 @@ export const projects = [
     accentColor: "#00F5A0"
   },
   {
+    id: "speech-diarization-pipeline",
+    title: "Automated Meeting Minutes & Neural Speaker Diarization Pipeline",
+    category: "Speech & NLP",
+    featured: true,
+    badge: "Enterprise Voice Intelligence",
+    description: "End-to-end production speech intelligence system engineered to transcribe multi-speaker executive meetings. Combines FFmpeg audio preprocessing, Silero VAD silence suppression, faster-Whisper ASR, wav2vec2 CTC forced alignment, and pyannote.audio neural speaker diarization for millisecond-level speaker-attributed transcripts and action summaries.",
+    metrics: ["Multi-Speaker Attribution", "Silero VAD Silence Stripping", "faster-Whisper & wav2vec2 CTC", "pyannote.audio Overlap Handling"],
+    tags: ["Whisper ASR", "pyannote.audio", "wav2vec2", "Audio DSP", "FastAPI", "Python"],
+    github: "https://github.com/Hanzala007-code",
+    accentColor: "#FFB800"
+  },
+  {
+    id: "invoice-processing-engine",
+    title: "Dynamic Multi-Vendor Invoice Processing & Spatial Layout Engine",
+    category: "AI Automation",
+    featured: true,
+    badge: "Document AI & Spatial OCR",
+    description: "Enterprise invoice parsing engine built to automate accounts-payable workflows across ~300 unique vendor layouts. Eliminates slow brute-force OCR by fingerprinting spatial bounding-box templates once and dynamically extracting line-item deltas, tax IDs, and billing amounts with cross-field arithmetic validation.",
+    metrics: ["~300 Vendors Supported", "Spatial Template Fingerprinting", "Dynamic Delta Extraction", "85% Latency Reduction"],
+    tags: ["Document AI", "FastAPI", "Python", "Spatial Layout Parsing", "OCR Pipelines", "Enterprise Automation"],
+    github: "https://github.com/Hanzala007-code",
+    accentColor: "#38EF7D"
+  },
+  {
     id: "cctv-gun-detection",
     title: "AI Surveillance System: Real-Time Gun Detection via CCTV",
     category: "Computer Vision",
@@ -70,18 +94,6 @@ export const projects = [
     tags: ["YOLOv8", "Computer Vision", "Real-Time Detection", "Surveillance", "PyTorch"],
     github: "https://github.com/Hanzala007-code",
     accentColor: "#FF3366"
-  },
-  {
-    id: "speech-diarization-pipeline",
-    title: "Automated Meeting Minutes & Speaker Diarization Pipeline",
-    category: "Speech & NLP",
-    featured: false,
-    badge: "Enterprise Voice Pipeline",
-    description: "Production audio intelligence pipeline replacing manual transcription. Features ffmpeg preprocessing, Silero VAD, faster-Whisper ASR, CTC forced alignment (wav2vec2), and pyannote speaker diarization with overlap handling.",
-    metrics: ["Multi-Speaker Attribution", "Silero VAD", "faster-Whisper", "pyannote diarization"],
-    tags: ["Whisper ASR", "pyannote.audio", "wav2vec2", "Audio Processing", "FastAPI"],
-    github: "https://github.com/Hanzala007-code",
-    accentColor: "#FFB800"
   },
   {
     id: "street-fighter-bot",
@@ -124,15 +136,39 @@ export const projects = [
 export const experiences = [
   {
     company: "Cnergyico",
-    role: "AI Automation Intern",
+    role: "AI Automation Engineer",
     period: "Aug 2026 — Sept 2026",
     location: "Pakistan",
-    summary: "Built enterprise speech transcription pipelines and high-throughput invoice processing solutions.",
+    summary: "Architected and shipped production speech transcription pipelines and high-throughput enterprise document intelligence systems.",
+    projects: [
+      {
+        title: "Automated Meeting Minutes & Neural Speaker Diarization Pipeline",
+        badge: "Speech Intelligence & DSP",
+        description: "Engineered an end-to-end audio intelligence pipeline to transcribe and summarize corporate meetings with millisecond-accurate per-speaker attribution, replacing error-prone manual note-taking.",
+        architecture: [
+          "Audio Preprocessing & VAD: Ingests audio through FFmpeg stream normalization, followed by Silero Voice Activity Detection (VAD) to isolate human voice and eliminate ambient background noise.",
+          "ASR & Alignment: Deploys faster-Whisper with beam search for robust multilingual transcription, combined with wav2vec2 CTC forced alignment for millisecond-level word-boundary timing.",
+          "Speaker Diarization & Summarization: Integrates pyannote.audio neural clustering to resolve overlapping speech and attribute distinct speaker labels to conversational turns, outputting structured executive minutes."
+        ],
+        tech: ["faster-Whisper", "pyannote.audio", "Silero VAD", "wav2vec2", "FastAPI", "FFmpeg"]
+      },
+      {
+        title: "Dynamic Multi-Vendor Invoice Processing & Layout Extraction Engine",
+        badge: "Document AI & Spatial OCR",
+        description: "Architected a high-throughput intelligent document parsing system handling invoices across ~300 unique vendor formats without requiring slow, repetitive full-page OCR re-scanning.",
+        architecture: [
+          "Spatial Template Fingerprinting: Memorizes each vendor's spatial bounding-box layout and key-value anchors once, storing coordinates in an optimized template cache.",
+          "Dynamic Delta Extraction: Matches incoming invoices to their vendor template and targets only dynamic fields (invoice numbers, tax IDs, line-item quantity tables, payment due dates, and totals).",
+          "Automated Field Reconciliation: Built-in arithmetic verification (subtotal + tax = total) ensures high extraction confidence, cuts document turnaround time by ~85%, and completely prevents OCR hallucinations."
+        ],
+        tech: ["Document AI", "FastAPI", "Python", "Spatial Layout Parsing", "OCR Pipelines", "Regex Verification"]
+      }
+    ],
     highlights: [
       "Engineered automated meeting-minutes pipeline transcribing recordings with per-speaker attribution and summaries via ffmpeg preprocessing, Silero VAD, faster-Whisper ASR, CTC forced alignment (wav2vec2), and pyannote diarization.",
       "Architected an invoice-processing system spanning ~300 vendors that eliminates repetitive re-scanning by capturing each vendor's layout once and updating only changed fields dynamically."
     ],
-    tech: ["faster-Whisper", "pyannote", "Silero VAD", "wav2vec2", "FastAPI", "Document AI"]
+    tech: ["faster-Whisper", "pyannote.audio", "Silero VAD", "wav2vec2", "FastAPI", "Document AI"]
   },
   {
     company: "Escaplix",
@@ -161,7 +197,7 @@ export const experiences = [
   },
   {
     company: "NADRA Pakistan",
-    role: "Data Science Intern",
+    role: "Data Science Associate",
     period: "Jul 2024 — Aug 2024",
     location: "Islamabad, PK",
     summary: "Developed conversational AI systems based on structured national government datasets.",

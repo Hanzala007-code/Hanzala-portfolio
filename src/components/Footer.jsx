@@ -127,7 +127,7 @@ export default function Footer() {
           }}
         >
           <div>
-            Â© {new Date().getFullYear()} Hanzala Malik. Engineered with React & Neural Design Tokens.
+            © {new Date().getFullYear()} Hanzala Malik. Engineered with React & Neural Design Tokens.
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
             <span className="status-dot" style={{ width: "6px", height: "6px" }}></span>

@@ -36,37 +36,58 @@ export default function Navbar() {
       }}
     >
       <div className="container" style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-        {/* Brand Logo */}
+        {/* Brand Logo - Clean, Minimalist & Human */}
         <a
           href="#"
           style={{
             display: "flex",
             alignItems: "center",
-            gap: "10px",
+            gap: "12px",
             textDecoration: "none",
-            color: "var(--text-primary)"
+            color: "var(--text-primary)",
+            transition: "var(--transition)"
           }}
+          className="brand-link"
         >
           <div
             style={{
               width: "38px",
               height: "38px",
               borderRadius: "10px",
-              background: "linear-gradient(135deg, #00f0ff, #8a2be2)",
+              background: "rgba(255, 255, 255, 0.05)",
+              border: "1px solid rgba(255, 255, 255, 0.12)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              boxShadow: "0 0 15px rgba(0, 240, 255, 0.4)"
+              fontFamily: "var(--font-display)",
+              fontWeight: 800,
+              fontSize: "0.95rem",
+              letterSpacing: "-0.04em",
+              color: "#ffffff",
+              boxShadow: "0 4px 12px rgba(0, 0, 0, 0.4)",
+              position: "relative"
             }}
           >
-            <Cpu size={22} color="#07090e" strokeWidth={2.5} />
+            <span>HM</span>
+            <span
+              style={{
+                position: "absolute",
+                bottom: "6px",
+                right: "6px",
+                width: "4px",
+                height: "4px",
+                borderRadius: "50%",
+                background: "var(--accent-cyan)",
+                boxShadow: "0 0 6px var(--accent-cyan)"
+              }}
+            />
           </div>
           <div>
-            <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "1.15rem", letterSpacing: "-0.01em" }}>
-              HANZALA<span style={{ color: "var(--accent-cyan)" }}>.AI</span>
+            <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "1.08rem", letterSpacing: "-0.02em", color: "#ffffff" }}>
+              Hanzala Malik
             </div>
-            <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.68rem", color: "var(--text-muted)", letterSpacing: "0.06em" }}>
-              DATA SCIENCE & AI/ML
+            <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.68rem", color: "var(--text-muted)", letterSpacing: "0.04em" }}>
+              Data Science & AI
             </div>
           </div>
         </a>

@@ -35,19 +35,25 @@ export default function Footer() {
                 width: "36px",
                 height: "36px",
                 borderRadius: "10px",
-                background: "linear-gradient(135deg, #00f0ff, #8a2be2)",
+                background: "rgba(255, 255, 255, 0.05)",
+                border: "1px solid rgba(255, 255, 255, 0.12)",
                 display: "flex",
                 alignItems: "center",
-                justifyContent: "center"
+                justifyContent: "center",
+                fontFamily: "var(--font-display)",
+                fontWeight: 800,
+                fontSize: "0.9rem",
+                letterSpacing: "-0.03em",
+                color: "#ffffff"
               }}
             >
-              <Cpu size={20} color="#07090e" strokeWidth={2.5} />
+              HM
             </div>
             <div>
-              <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "1.1rem" }}>
+              <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "1.05rem", color: "#ffffff" }}>
                 Hanzala Malik
               </div>
-              <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.75rem", color: "var(--text-muted)" }}>
+              <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.72rem", color: "var(--text-muted)" }}>
                 Data Science & AI/ML Engineer
               </div>
             </div>
@@ -121,7 +127,7 @@ export default function Footer() {
           }}
         >
           <div>
-            © {new Date().getFullYear()} Hanzala Malik. Engineered with React & Neural Design Tokens.
+            Â© {new Date().getFullYear()} Hanzala Malik. Engineered with React & Neural Design Tokens.
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
             <span className="status-dot" style={{ width: "6px", height: "6px" }}></span>
